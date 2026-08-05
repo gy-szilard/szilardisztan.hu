@@ -279,7 +279,7 @@ body {
     border: 1px solid var(--border-color);
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-md);
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     white-space: nowrap;
     z-index: 100;
     pointer-events: none;
