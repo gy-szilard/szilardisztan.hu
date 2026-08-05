@@ -1,0 +1,78 @@
+#kereso-kontener {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.kereso-doboz {
+    display: flex;
+    align-items: center;
+    background-color: var(--kiemelt-szin);
+    border: 1px solid var(--keret-szin);
+    border-radius: 2rem;
+    padding: 0.25rem;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kereso-doboz.nyitva {
+    width: 220px;
+    border-color: var(--masodlagos-szin);
+    box-shadow: 0 0 10px rgba(38, 161, 161, 0.4);
+}
+
+.kereso-gomb {
+    background: transparent;
+    border: none;
+    color: var(--szoveg-szin);
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.kereso-gomb:hover {
+    color: var(--hover-szin);
+}
+
+.kereso-mező {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--szoveg-szin);
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0 0.75rem 0 0.25rem;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease 0.1s;
+}
+
+.kereso-doboz.nyitva .kereso-mező {
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    #kereso-kontener {
+        top: 5.5rem;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .kereso-doboz.nyitva {
+        width: calc(100vw - 2rem);
+        max-width: 320px;
+    }
+}

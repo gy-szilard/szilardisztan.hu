@@ -1,0 +1,19 @@
+[
+    { "ev": 2022, "honap": "május", "szint": "kozep", "file": "22majus_k.zip" },
+    { "ev": 2022, "honap": "október", "szint": "kozep", "file": "22oktober_k.zip" },
+    { "ev": 2022, "honap": "október", "szint": "emelt", "file": "22oktober_e.zip" },
+    { "ev": 2023, "honap": "május", "szint": "kozep", "file": "23majus_k.zip" },
+    { "ev": 2023, "honap": "május", "szint": "emelt", "file": "23majus_e.zip" },
+    { "ev": 2023, "honap": "október", "szint": "kozep", "file": "23oktober_k.zip" },
+    { "ev": 2023, "honap": "október", "szint": "emelt", "file": "23oktober_e.zip" },
+    { "ev": 2024, "honap": "május", "szint": "kozep", "file": "24majus_k.zip" },
+    { "ev": 2024, "honap": "május", "szint": "emelt", "file": "24majus_e.zip" },
+    { "ev": 2024, "honap": "október", "szint": "kozep", "file": "24oktober_k.zip" },
+    { "ev": 2024, "honap": "október", "szint": "emelt", "file": "24oktober_e.zip" },
+    { "ev": 2025, "honap": "május", "szint": "kozep", "file": "25majus_k.zip" },
+    { "ev": 2025, "honap": "május", "szint": "emelt", "file": "25majus_e.zip" },
+    { "ev": 2025, "honap": "október", "szint": "kozep", "file": "25oktober_k.zip" },
+    { "ev": 2025, "honap": "október", "szint": "emelt", "file": "25oktober_e.zip" },
+    { "ev": 2026, "honap": "május", "szint": "kozep", "file": "26majus_k.zip" },
+    { "ev": 2026, "honap": "május", "szint": "emelt", "file": "26majus_e.zip" }
+]

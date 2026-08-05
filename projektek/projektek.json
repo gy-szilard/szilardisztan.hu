@@ -1,0 +1,18 @@
+[
+  {
+    "projekt-nev": "Sodrófás Játék",
+    "keszito": "Én",
+    "leiras": "Egy webes játék, amiben sodrófával kell lecsapni az NPC-ket. A játékot egyik ismerősöm ihlette.",
+    "sajatE": true,
+    "link": "https://gy-szilard.github.io/sodrofas-jatek/",
+    "forras": "https://github.com/gy-szilard/sodrofas-jatek"
+  },  
+  {
+    "projekt-nev": "Statify mod <br> (Minecraft-hoz)",
+    "keszito": "Soviaat",
+    "leiras": "A Statify lehetővé teszi, hogy megjelenítse a játékon belüli statisztikáid egy Google Táblázatban. Fontos statisztikákra és néhány kevésbé fontos (vicces) statisztikára is kördiagramokat biztosít. Ez a mod minden 2 percben feltölti a statisztikáid a Google Táblázatokba.",
+    "sajatE": false,
+    "link": "https://soviaat.dev/statify/",
+    "forras": "https://github.com/Soviaat/Statify"
+  }
+]
