@@ -24,6 +24,10 @@ function keresoInicializalasa(opciok = {}) {
 
     keresoGomb.addEventListener("click", (e) => {
         e.stopPropagation();
+        const infoTartalom = document.getElementById("info-tartalom-elem");
+        if (infoTartalom) {
+            infoTartalom.classList.remove("nyitva");
+        }
         keresoDoboz.classList.toggle("nyitva");
         if (keresoDoboz.classList.contains("nyitva")) {
             keresoInput.focus();

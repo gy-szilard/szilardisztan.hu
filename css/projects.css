@@ -243,18 +243,19 @@ body {
         align-items: center;
         width: 60px;
         height: 60px; 
-        max-width: 340px;
+        max-width: min(340px, calc(100% - 2rem));
         transition: width 0.2s ease;
         overflow: hidden;
         position: fixed;
         margin: 0;
         top: 1rem;
         z-index: 2000;
+        box-sizing: border-box;
     }
 
     .title-container.active {
-        width: 340px;
-        max-width: calc(100% - 2rem);
+        width: min(340px, calc(100% - 2rem));
+        max-width: min(340px, calc(100% - 2rem));
         height: auto;
         overflow: visible;
     }
@@ -333,10 +334,11 @@ body {
     }
 
     .doboz-csomagolo {
-        width: calc(100% - 2rem);
-        max-width: 340px;
+        width: 100%;
+        max-width: min(340px, calc(100% - 2rem));
         margin: 0 auto 3rem auto;
         padding: 0;
+        box-sizing: border-box;
     }
 
     .doboz {

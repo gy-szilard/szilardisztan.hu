@@ -77,6 +77,10 @@ function infoInicializalasa() {
 
     infoGomb.addEventListener("click", (e) => {
         e.stopPropagation();
+        const keresoDoboz = document.getElementById("kereso-doboz-elem");
+        if (keresoDoboz) {
+            keresoDoboz.classList.remove("nyitva");
+        }
         infoTartalom.classList.toggle("nyitva");
     });
 

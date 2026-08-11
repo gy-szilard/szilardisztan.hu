@@ -67,7 +67,7 @@
         top: 5.5rem;
         left: calc(50% + 55px);
         right: auto;
-        transform: translateX(-50%);
+        transform: translateX(-70%);
         z-index: 950;
     }
 
