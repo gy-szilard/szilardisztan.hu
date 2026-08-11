@@ -35,8 +35,11 @@ function keresoInicializalasa(opciok = {}) {
     });
 
     document.addEventListener("click", (e) => {
-        if (!keresoDoboz.contains(e.target) && keresoInput.value.trim() === "") {
+        if (!keresoDoboz.contains(e.target)) {
             keresoDoboz.classList.remove("nyitva");
+            keresoInput.value = "";
+            const elemek = listaKontener.querySelectorAll(elemKlassz);
+            elemek.forEach(elem => elem.style.display = "");
         }
     });
 
