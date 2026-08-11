@@ -56,4 +56,36 @@ async function projektek() {
     }
 }
 
+function infoInicializalasa() {
+    const infoKontener = document.getElementById("info-kontener");
+    if (!infoKontener) return;
+
+    const fontosSzoveg = `Felkerülhet a weboldalra egy általad készített projekt is. Ehhez a Discord szerveremen tudod jelezni szándékodat a "projekt-ajánlás" csatornán, a kitűzött üzenetek közt megtalálod a szempontokat.`;
+
+    infoKontener.innerHTML = `
+        <button class="info-gomb" id="info-gomb-elem" aria-label="Információ">
+            <i class="fa-solid fa-circle-info"></i>
+        </button>
+        <div class="info-tartalom-doboz" id="info-tartalom-elem">
+            <div class="info-cim">Fontos információ!</div>
+            <p>${fontosSzoveg}</p>
+        </div>
+    `;
+
+    const infoGomb = document.getElementById("info-gomb-elem");
+    const infoTartalom = document.getElementById("info-tartalom-elem");
+
+    infoGomb.addEventListener("click", (e) => {
+        e.stopPropagation();
+        infoTartalom.classList.toggle("nyitva");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!infoKontener.contains(e.target)) {
+            infoTartalom.classList.remove("nyitva");
+        }
+    });
+}
+
 projektek();
+infoInicializalasa();

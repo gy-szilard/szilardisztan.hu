@@ -10,8 +10,8 @@
     align-items: center;
     background-color: var(--kiemelt-szin);
     border: 1px solid var(--keret-szin);
-    border-radius: 2rem;
-    padding: 0.25rem;
+    border-radius: var(--kozepes-br);
+    padding: 0;
     width: 50px;
     height: 50px;
     box-sizing: border-box;
@@ -20,24 +20,24 @@
 }
 
 .kereso-doboz.nyitva {
-    width: 220px;
+    width: 240px;
     border-color: var(--masodlagos-szin);
-    box-shadow: 0 0 10px rgba(38, 161, 161, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .kereso-gomb {
     background: transparent;
     border: none;
     color: var(--szoveg-szin);
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: color 0.2s ease;
 }
 
@@ -51,8 +51,8 @@
     outline: none;
     color: var(--szoveg-szin);
     font-family: inherit;
-    font-size: 1rem;
-    padding: 0 0.75rem 0 0.25rem;
+    font-size: 0.95rem;
+    padding: 0 1rem 0 0.5rem;
     width: 100%;
     opacity: 0;
     transition: opacity 0.2s ease 0.1s;
@@ -65,14 +65,14 @@
 @media screen and (max-width: 800px) {
     #kereso-kontener {
         top: 5.5rem;
-        left: 50%;
+        left: calc(50% + 55px);
         right: auto;
         transform: translateX(-50%);
-        z-index: 1000;
+        z-index: 950;
     }
 
     .kereso-doboz.nyitva {
-        width: calc(100vw - 2rem);
-        max-width: 320px;
+        width: 240px;
+        max-width: calc(100vw - 2rem);
     }
 }

@@ -7,7 +7,6 @@
     --kiemelt-szin: #2a3441;
     --szoveg-szin: #f4f4f4;
     --hover-szin: #9db6ca;
-
     --kisebb-br: .25rem;
     --kis-br: .5rem;
     --kozepes-br: .75rem;
@@ -62,6 +61,71 @@ body {
     border: none;
     cursor: pointer;
     flex: 0 0 60px;
+}
+
+#info-kontener {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    z-index: 900; 
+}
+
+.info-gomb {
+    background-color: var(--kiemelt-szin);
+    border: 1px solid var(--keret-szin);
+    color: var(--szoveg-szin);
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: var(--kozepes-br);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.info-gomb:hover {
+    color: var(--hover-szin);
+    border-color: var(--masodlagos-szin);
+}
+
+.info-tartalom-doboz {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 320px;
+    background-color: var(--kiemelt-szin);
+    border: 1px solid var(--keret-szin);
+    border-radius: var(--kozepes-br);
+    padding: 1.25rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 1000;
+    text-align: left;
+}
+
+.info-tartalom-doboz.nyitva {
+    display: block;
+}
+
+.info-cim {
+    font-weight: bold;
+    color: var(--masodlagos-szin);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-tartalom-doboz p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--szoveg-szin);
 }
 
 .container {
@@ -152,7 +216,7 @@ body {
     color: #ffffff;
 }
 
-.pages, .gomb, .hamburger {
+.pages, .gomb, .hamburger, .info-gomb {
     color: inherit;
 }
 
@@ -185,10 +249,12 @@ body {
         position: fixed;
         margin: 0;
         top: 1rem;
+        z-index: 2000;
     }
 
     .title-container.active {
-        width: calc(100% - 2rem);
+        width: 340px;
+        max-width: calc(100% - 2rem);
         height: auto;
         overflow: visible;
     }
@@ -207,6 +273,34 @@ body {
         left: 50%;
         transform: translateX(-50%);
         z-index: 2001;
+    }
+
+    #info-kontener {
+        position: fixed;
+        top: 5.5rem;
+        left: calc(50% - 32px);
+        transform: translateX(-100%);
+        z-index: 900;
+    }
+
+    #kereso-kontener {
+        position: fixed;
+        top: 5.5rem;
+        left: calc(50% + 32px);
+        transform: translateX(0);
+        right: auto;
+        z-index: 950;
+    }
+
+    .info-tartalom-doboz.nyitva {
+        position: fixed !important;
+        top: 5rem !important;
+        left: 50% !important;
+        transform: translateX(-40%) !important;
+        width: 310px !important;
+        max-width: calc(100vw - 2rem) !important;
+        z-index: 1500 !important;
+        margin: 0 !important;
     }
 
     .hamburger i {
