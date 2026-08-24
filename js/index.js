@@ -29,6 +29,45 @@ function isPC() {
     return !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
+function renderStaticSections() {
+    const aboutBox = document.getElementById("about");
+    if (aboutBox) {
+        aboutBox.innerHTML = `
+            <h2>Rólam</h2>
+            <p>Szia, Szilárd vagyok. <br>Jelenleg a Szegedi Tudományegyetemen tanulok Programtervező Informatikusnak.</p>
+            <p>Ezt az oldalt azért hoztam létre, hogy a Digitális Kultúra érettségi előtt állókat segítsem, főként a programozós feladatokban.</p>
+            <p>Bármi kérdésed van vagy esetleges hibát/hiányosságot találsz a megoldásokban, akkor a Discord szerveren ezt jelezheted.</p>
+        `;
+    }
+
+    const socialsContainer = document.getElementById("socials-container");
+    if (socialsContainer) {
+        socialsContainer.innerHTML = `
+            <div class="social discord"><i class="fab fa-discord"></i></div>
+            <div class="social instagram"><i class="fab fa-instagram"></i></div>
+            <div class="social github"><i class="fab fa-github"></i></div>
+        `;
+    }
+
+    const intermediateBox = document.getElementById("intermediate-box");
+    if (intermediateBox) {
+        intermediateBox.innerHTML = `
+            <h2>Középszint</h2>
+            <p>Itt található a középszintű Digitális Kultúra érettségik programozós feladatai (Python-ban).</p>
+            <div id="intermediate-list" class="exam-container"></div>
+        `;
+    }
+
+    const advancedBox = document.getElementById("advanced-box");
+    if (advancedBox) {
+        advancedBox.innerHTML = `
+            <h2>Emelt szint</h2>
+            <p>Itt található az emelt szintű Digitális Kultúra érettségik programozós feladatai (Python-ban).</p>
+            <div id="advanced-list" class="exam-container"></div>
+        `;
+    }
+}
+
 async function renderExams() {
     const intermediateContainer = document.getElementById("intermediate-list");
     const advancedContainer = document.getElementById("advanced-list");
@@ -64,12 +103,13 @@ async function renderExams() {
 
     } catch (err) {
         console.error("Hiba:", err);
-        intermediateContainer.innerHTML = "<p>Hiba történt az adatok betöltésekor.</p>";
-        advancedContainer.innerHTML = "<p>Hiba történt az adatok betöltésekor.</p>";
+        if (intermediateContainer) intermediateContainer.innerHTML = "<p>Hiba történt az adatok betöltésekor.</p>";
+        if (advancedContainer) advancedContainer.innerHTML = "<p>Hiba történt az adatok betöltésekor.</p>";
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    renderStaticSections();
     renderExams();
 
     document.querySelectorAll(".social").forEach(item => {
