@@ -3,7 +3,7 @@ async function renderExams() {
     const advancedContainer = document.getElementById("advanced-list");
 
     try {
-        const response = await fetch('./erettsegi/vizsgak.json');
+        const response = await fetch('../erettsegi/vizsgak.json');
 
         if (!response.ok) {
             throw new Error("Nem sikerült elérni a JSON-t.");
@@ -11,8 +11,8 @@ async function renderExams() {
 
         const exams = await response.json();
 
-        intermediateContainer.innerHTML = "";
-        advancedContainer.innerHTML = "";
+        if (intermediateContainer) intermediateContainer.innerHTML = "";
+        if (advancedContainer) advancedContainer.innerHTML = "";
 
         exams.forEach(exam => {
             const html = `
@@ -24,9 +24,9 @@ async function renderExams() {
                 </div>
             `;
 
-            if (exam.szint === "kozep") {
+            if (exam.szint === "kozep" && intermediateContainer) {
                 intermediateContainer.innerHTML += html;
-            } else {
+            } else if (advancedContainer) {
                 advancedContainer.innerHTML += html;
             }
         });
@@ -37,3 +37,7 @@ async function renderExams() {
         if (advancedContainer) advancedContainer.innerHTML = "<p>Hiba történt az adatok betöltésekor.</p>";
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderExams();
+});
