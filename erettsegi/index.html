@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szilárdisztán | Projektek</title>
+    <title>Szilárdisztán | érettségik</title>
     <link rel="icon" type="image/x-icon" href="../favicon.png">
-    <link rel="stylesheet" href="../css/projects.css">
-    <link rel="stylesheet" href="../css/kereso.css">
+    <link rel="stylesheet" href="../css/erettsegi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div id="kereso-kontener"></div> 
-    <div id="info-kontener"></div>
-
     <div class="container">
+
         <div class="title-container">
             <button class="hamburger" aria-label="Menü megnyitása">
                 <i class="fa-solid fa-bars"></i>
@@ -21,18 +18,18 @@
 
             <div class="nav-links">
                 <a href="../" class="pages">Kezdőlap</a>
-                <a href="../erettsegi/" class="pages">Érettségi</a>
-                <a href="./" class="pages" id="smooth-vissza">Projektek</a>
+                <a href="./" class="pages" id="smooth-vissza">Érettségi</a>
+                <a href="../projektek/" class="pages">Projektek</a>
             </div>
         </div>
-
-        <div class="doboz-csomagolo">
-            <div id="projekt-lista" class="projekt-halozat"></div>
+        
+        <div class="box-wrapper">
+            <div class="box half-width" id="intermediate-box"></div>
+            <div class="box half-width" id="advanced-box"></div>
         </div>
     </div>
 
-    <script src="../js/projektek.js"></script>
-    <script src="../js/kereso.js"></script>
-    <script src="../js/menu.js"></script>
+    <script src="./js/erettsegi.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
