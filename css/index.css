@@ -113,11 +113,11 @@ body {
 
 .education-item {
     background-color: transparent;
-    padding: 1.2rem 0.5rem;
+    padding: 1.2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     box-sizing: border-box;
     border-bottom: 1px solid var(--border-color);
 }
@@ -136,19 +136,17 @@ body {
     font-weight: 500;
 }
 
-.years-badge {
-    font-size: 1.1rem;
+.years-text {
+    font-size: 1.2rem;
     white-space: nowrap;
-    background-color: var(--primary-color);
-    padding: 0.3rem 0.8rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    opacity: 0.9;
     flex-shrink: 0;
 }
 
 .end-year-red {
     color: #ff5555;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .socials-box {
@@ -402,10 +400,11 @@ body {
     .education-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.6rem;
+        gap: 0.4rem;
     }
 
-    .years-badge {
+    .years-text {
         align-self: flex-start;
+        font-size: 1.1rem;
     }
 }

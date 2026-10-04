@@ -87,7 +87,7 @@ async function renderEducation() {
             return `
                 <div class="education-item">
                     <span class="school-name">${item.school}</span>
-                    <span class="years-badge">${item.startYear} – ${endYearDisplay}</span>
+                    <span class="years-text">${item.startYear} – ${endYearDisplay}</span>
                 </div>
             `;
         }).join('');
