@@ -48,6 +48,24 @@ function renderStaticSections() {
             <div class="social github"><i class="fab fa-github"></i></div>
         `;
     }
+
+    const intermediateBox = document.getElementById("intermediate-box");
+    if (intermediateBox) {
+        intermediateBox.innerHTML = `
+            <h2>Középszint</h2>
+            <p>Itt található a középszintű Digitális Kultúra érettségik programozós feladatai (Python-ban).</p>
+            <div id="intermediate-list" class="exam-container"></div>
+        `;
+    }
+
+    const advancedBox = document.getElementById("advanced-box");
+    if (advancedBox) {
+        advancedBox.innerHTML = `
+            <h2>Emelt szint</h2>
+            <p>Itt található az emelt szintű Digitális Kultúra érettségik programozós feladatai (Python-ban).</p>
+            <div id="advanced-list" class="exam-container"></div>
+        `;
+    }
 }
 
 async function renderEducation() {
@@ -63,7 +81,7 @@ async function renderEducation() {
 
         const itemsHtml = educationData.map(item => {
             const endYearDisplay = item.endYear 
-                ? `<span class="end-year-red">${item.endYear}</span>` 
+                ? item.endYear 
                 : `<span class="end-year-red">Jelenleg</span>`;
 
             return `
