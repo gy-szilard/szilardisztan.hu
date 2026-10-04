@@ -94,6 +94,55 @@ body {
     max-width: 42rem; 
 }
 
+.education-box {
+    width: 100%;
+    max-width: 42rem;
+    text-align: left;
+}
+
+.education-box h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.education-item {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.school-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.years-badge {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    background-color: var(--accent-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+}
+
+.end-year-red {
+    color: #ff5555;
+    font-weight: bold;
+}
+
 .socials-box {
     padding: 1rem 1.8rem;
     display: inline-block;
@@ -317,7 +366,7 @@ body {
         width: 100%;
     }
 
-    .about-box {
+    .about-box, .education-box {
         max-width: 100%;
     }
 

@@ -48,28 +48,51 @@ function renderStaticSections() {
             <div class="social github"><i class="fab fa-github"></i></div>
         `;
     }
+}
 
-    const intermediateBox = document.getElementById("intermediate-box");
-    if (intermediateBox) {
-        intermediateBox.innerHTML = `
-            <h2>Középszint</h2>
-            <p>Itt található a középszintű Digitális Kultúra érettségik programozós feladatai (Python-ban).</p>
-            <div id="intermediate-list" class="exam-container"></div>
+async function renderEducation() {
+    const container = document.getElementById("education-container");
+    if (!container) return;
+
+    try {
+        const response = await fetch("./education.json");
+        if (!response.ok) {
+            throw new Error(`HTTP hiba: ${response.status}`);
+        }
+        const educationData = await response.json();
+
+        const itemsHtml = educationData.map(item => {
+            const endYearDisplay = item.endYear 
+                ? `<span class="end-year-red">${item.endYear}</span>` 
+                : `<span class="end-year-red">Jelenleg</span>`;
+
+            return `
+                <div class="education-item">
+                    <span class="school-name">${item.school}</span>
+                    <span class="years-badge">${item.startYear} – ${endYearDisplay}</span>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = `
+            <h2>Tanulmányok</h2>
+            <div class="education-list">
+                ${itemsHtml}
+            </div>
         `;
-    }
-
-    const advancedBox = document.getElementById("advanced-box");
-    if (advancedBox) {
-        advancedBox.innerHTML = `
-            <h2>Emelt szint</h2>
-            <p>Itt található az emelt szintű Digitális Kultúra érettségik programozós feladatai (Python-ban).</p>
-            <div id="advanced-list" class="exam-container"></div>
+    } catch (error) {
+        console.error("Hiba a tanulmányok betöltésekor:", error);
+        container.innerHTML = `
+            <h2>Tanulmányok</h2>
+            <div style="color: #ff5555; text-align: center;">Nem sikerült betölteni a tanulmányokat.</div>
         `;
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     renderStaticSections();
+    renderEducation();
+
     if (typeof renderExams === "function") {
         renderExams();
     }
